@@ -1,0 +1,43 @@
+import sys
+balance_a=0
+gas_a=30
+water_a = 100
+electric_a = 270
+def init():
+    global balance_a
+    balance_a=250.00
+print("------Welcome to the Bank ATM Program------")    
+print()
+print("---Login---")
+tries= 3
+pin_code="1234"
+pin_try= input("Please enter you pin to access your bank account > ")
+while pin_code!=pin_try:
+    tries=tries-1
+    if (tries==2):
+       print("Wrong Pin! You have 2 attempts remaining.") 
+       pin_try= input ("Please, enter your pin: ")  
+    elif (tries==1):
+       print("Wrong Pin! You have 1 attempts remaining. Be Careful!")
+       pin_try= input ("Please, enter your pin: ")  
+    elif (tries==0):
+        print("Your attempts overed. Bank account locked! Please contact with your bank.")
+        sys.exit
+        SystemExit()
+print()
+print("Your Pin Code correct!") 
+print("----------------------")
+
+def Balance():
+    global balance_a 
+    print()
+    print("Your balance : ",end="")
+    print("%.2f" % balance_a)      
+
+
+
+def Deposit ():
+    print()
+    print("---Deposit Menu---") 
+    global balance_a
+    balance()
